@@ -1,0 +1,64 @@
+/* Padronizações iniciais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    color: black;
+    background-color: white;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* ----------------------- Bloco BACKGROUND ----------------------- */
+.background {
+    background-image: url(svg/capa.svg);
+    background-size: cover;
+    width: 100%;
+    flex-grow: 1;
+    position: relative;
+}
+
+.background__flex {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.background__logo {
+    height: 40px;
+    margin: 30px 20px 60px;
+}
+
+.background__flat {
+    background-color: #F3F3F3;
+    height: 1px;
+    width: 100%;
+    flex-grow: 1;
+}
+
+
+/* ----------------------- Bloco FOOTER ----------------------- */
+.footer {
+    height: 64px;
+    flex-grow: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(153deg, #5A5789 0%, #2D2C45 100%);
+}
+
+.footer__text {
+    text-transform: uppercase;
+    color: white;
+    font-weight: 700;
+}
