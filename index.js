@@ -17,6 +17,7 @@ const feedbackPhone2 = document.getElementById('feedback-phone2');
 const button = document.getElementById('signup-button');
 const feedbackBlank = document.getElementById('feedback-blank');
 const feedbackInfo = document.getElementById('feedback-info');
+const successAlert = document.getElementById('success');
 // Carrossel
 const projectList = document.getElementById('projects-list');
 let listPosition = 0;
@@ -109,6 +110,7 @@ const handleSubmit = (event) => {
         feedbackBlank.classList.remove('feedback__blank_visible');
         feedbackInfo.classList.add('feedback__info_visible');
         button.setAttribute('disabled', '');
+        successAlert.style.animation = 'success 5s ease 0s 1';
     }
     event.preventDefault();
 }
@@ -129,7 +131,6 @@ fetch('https://picsum.photos/v2/list')
         for (i = 0; i < data.length; i++) {
             let li = document.createElement('LI');
             li.classList.add('projects__item');
-            li.setAttribute('tabindex', '0');
             li.innerHTML = '<img class="projects__image" src="' + data[i].download_url + '" alt="Capa do projeto">';
             projectList.appendChild(li);
         }

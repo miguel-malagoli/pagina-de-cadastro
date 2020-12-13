@@ -19,6 +19,69 @@ body {
     min-height: 100vh;
 }
 
+
+/* ----------------------- Bloco BACKGROUND ----------------------- */
+.success {
+    position: fixed;
+    z-index: 1;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #73E6CB;
+    border: 2px solid #00B98E;
+    border-radius: 9999px;
+    display: flex;
+    padding: 10px 30px;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    max-width: 400px;
+    opacity: 0;
+    pointer-events: none;
+}
+@media only screen and (min-width: 1000px) {
+    .success {
+        top: 3vw;
+    }
+}
+
+.success__check {
+    width: 24px;
+    height: 24px;
+}
+
+.success__line {
+    width: 1px;
+    height: 40px;
+    background-color: #008768;
+    margin: 0 16px 0;
+}
+
+.success__text {
+    font: 600 16px/22px 'Open Sans';
+    color: #008768;
+}
+
+@keyframes success {
+    0% {
+        top: -30px;
+        opacity: 0;
+    }
+    10% {
+        top: 30px;
+        opacity: 1;
+    }
+    60% {
+        top: 30px;
+        opacity: 1;
+    }
+    100% {
+        top: 30px;
+        opacity: 0;
+    }
+}
+
+
 /* ----------------------- Bloco BACKGROUND ----------------------- */
 .background {
     background-image: linear-gradient(#F3F3F3, #F3F3F3), url(svg/capa.svg);
@@ -360,10 +423,6 @@ body {
 }
 .projects__item:hover .projects__image {
     opacity: .5;
-}
-.projects__item:focus .projects__image {
-    opacity: .5;
-    border: 2px solid #403D70;
 }
 
 
