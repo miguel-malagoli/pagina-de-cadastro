@@ -18,33 +18,32 @@ body {
 
 /* ----------------------- Bloco BACKGROUND ----------------------- */
 .background {
-    background-image: url(svg/capa.svg);
-    background-size: 1080px auto;
-    background-position: -4px -32px;
+    background-image: linear-gradient(#F3F3F3, #F3F3F3), url(svg/capa.svg);
+    background-size: 100% 100%, 1080px auto;
+    background-position: 0 130px, -4px -32px;
+    background-repeat: no-repeat, no-repeat;
     width: 100%;
     flex-grow: 1;
     position: relative;
+    padding: 0 20px;
 }
-
-.background__flex {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+@media only screen and (min-width: 1000px) {
+    .background {
+        background-size: 100% 100%, 108vw auto;
+        background-position: 0 15.6vw, 0 -1vw;
+        padding: 0 10.8vw;
+    }
 }
 
 .background__logo {
     height: 40px;
-    margin: 30px 20px 60px;
+    margin: 30px 0;
 }
-
-.background__flat {
-    background-color: #F3F3F3;
-    height: 1px;
-    width: 100%;
-    flex-grow: 1;
+@media only screen and (min-width: 1000px) {
+    .background__logo {
+        height: 4.6vw;
+        margin: 3.1vw 0 2.3vw;
+    }
 }
 
 
@@ -54,8 +53,14 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 100px 20px 20px;
+    margin-bottom: 20px;
     flex-wrap: wrap;
+}
+@media only screen and (min-width: 1000px) {
+    .main {
+        align-items: stretch;
+        margin-bottom: 2.3vw;
+    }
 }
 
 
@@ -66,7 +71,15 @@ body {
     box-shadow: 0px 1px 2px #2E2D2C66;
     padding: 20px;
     width: 100%;
-    margin-bottom: 20px;
+    margin: 0 0 20px;
+}
+@media only screen and (min-width: 1000px) {
+    .signup {
+        flex: 1;
+        width: auto;
+        margin: 0 1.2vw 0 0;
+        padding: 2.3vw;
+    }
 }
 
 .signup__title {
@@ -100,6 +113,9 @@ body {
     padding: 10px;
     margin: 6px 0 2px;
 }
+.signup__input::placeholder {
+    color: #D5D5D5;
+}
 
 .signup__message {
     font: 400 10px/14px 'Open Sans';
@@ -129,6 +145,15 @@ body {
     width: 100%;
     display: flex;
     flex-direction: column;
+    margin: 0;
+}
+@media only screen and (min-width: 1000px) {
+    .feedback {
+        flex: 1;
+        width: auto;
+        margin: 0 0 0 1.2vw;
+        padding: 2.3vw;
+    }
 }
 
 .feedback__top {
@@ -146,6 +171,12 @@ body {
     color: #403D70;
     text-transform: uppercase;
     font: 700 20px/30px 'Open Sans';
+    margin-bottom: 0;
+}
+@media only screen and (min-width: 1000px) {
+    .feedback__title {
+        margin-bottom: 20px;
+    }
 }
 
 .feedback__blank {
@@ -153,10 +184,12 @@ body {
     color: #ABABAB;
     font: italic 400 14px/20px 'Open Sans';
     margin-bottom: 20px;
+    flex-grow: 1;
 }
 
 .feedback__info {
     display: none;
+    flex-grow: 1;
 }
 
 .feedback__label {
@@ -226,6 +259,12 @@ body {
     margin: 0 10px 9px;
     background-color: white;
     box-shadow: 0px 3px 6px #2E2D2C66;
+}
+@media only screen and (min-width: 1000px) {
+    .projects__item {
+        width: calc(50% - 20px);
+        padding-bottom: 30%;
+    }
 }
 
 .projects__image {
