@@ -47,6 +47,74 @@ body {
 }
 
 
+/* ----------------------- Bloco MAIN ----------------------- */
+.main {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 100px 20px 20px;
+}
+
+
+/* ----------------------- Bloco SIGNUP ----------------------- */
+.signup {
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0px 1px 2px #2E2D2C66;
+    padding: 20px;
+    width: 100%;
+}
+
+.signup__title {
+    font: 700 24px/36px 'Open Sans';
+    margin-bottom: 20px;
+}
+
+.signup__text {
+    font: 400 14px/20px 'Open Sans';
+    margin-bottom: 20px;
+}
+
+.signup__subtitle {
+    font: 600 16px/24px 'Open Sans';
+    margin-bottom: 20px;
+}
+
+.signup__label {
+    font: 400 14px/20px 'Open Sans';
+}
+.signup__label_required::before {
+    content: '*';
+    color: #E65562;
+    margin-right: 4px;
+}
+
+.signup__input {
+    width: 100%;
+    border: 1px solid #ABABAB;
+    font: 400 14px/18px 'Open Sans';
+    padding: 10px;
+    margin: 6px 0 2px;
+}
+
+.signup__message {
+    font: 400 10px/14px 'Open Sans';
+    margin-bottom: 20px;
+}
+
+.signup__button {
+    background-color: #3570B2;
+    border: none;
+    border-radius: 9999px;
+    color: white;
+    font: 600 16px/24px 'Open Sans';
+    padding: 9px 20px;
+    margin-top: 10px;
+    box-shadow: 0px 3px 6px #2E2D2C66;
+}
+
+
 /* ----------------------- Bloco FOOTER ----------------------- */
 .footer {
     height: 64px;
