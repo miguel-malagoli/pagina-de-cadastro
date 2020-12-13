@@ -31,36 +31,44 @@
                     <form class="signup__form">
                         <h2 class="signup__subtitle">Dados pessoais</h2>
                         <!--Nome-->
-                        <label class="signup__label signup__label_required">Nome completo</label>
+                        <label class="signup__label signup__label_required" for="form-name">Nome completo:</label>
                         <input
                             class="signup__input"
                             type="text"
                             placeholder="Seu nome"
+                            name="name"
+                            id="form-name"
                         >
                         <p class="signup__message">Mensagem de feedback</p>
                         <!--Email-->
-                        <label class="signup__label signup__label_required">E-mail</label>
+                        <label class="signup__label signup__label_required" for="form-email">E-mail:</label>
                         <input
                             class="signup__input"
                             type="email"
                             placeholder="seunome@sobrenome.com.br"
+                            name="email"
+                            id="form-email"
                         >
                         <p class="signup__message">Mensagem de feedback</p>
                         <div class="signup__flex">
                             <!--Telefone 1-->
-                            <label class="signup__label signup__label_required">Telefone 1</label>
+                            <label class="signup__label signup__label_required" for="form-phone1">Telefone 1:</label>
                             <input
                                 class="signup__input"
                                 type="text"
                                 placeholder="(88) 8888-8888"
+                                name="phone1"
+                                id="form-phone1"
                             >
                             <p class="signup__message">Mensagem de feedback</p>
                             <!--Telefone 2-->
-                            <label class="signup__label">Telefone 2</label>
+                            <label class="signup__label" for="form-phone2">Telefone 2:</label>
                             <input
                                 class="signup__input"
                                 type="text"
                                 placeholder="(88) 8888-8888"
+                                name="phone2"
+                                id="form-phone2"
                             >
                             <p class="signup__message">Mensagem de feedback</p>
                         </div>
@@ -69,7 +77,108 @@
                 </div>
                 <!--Bloco FEEDBACK-->
                 <div class="feedback">
-
+                    <div class="feedback__top"></div>
+                    <h3 class="feedback__title">Ficha do candidato</h3>
+                    <p class="feedback__blank">
+                        Preencha o formulário e clique em "Enviar" após conferir atentamente.
+                    </p>
+                    <div class="feedback__info">
+                        <!--Nome-->
+                        <label class="feedback__label">Nome completo:</label>
+                        <p class="feedback__data">João Henrique Silva e Souza</p>
+                        <!--E-mail-->
+                        <label class="feedback__label">E-mail:</label>
+                        <p class="feedback__data">joaohenriquesilva@meuemail.com.br</p>
+                        <!--Telefone 1-->
+                        <label class="feedback__label">Telefone 1:</label>
+                        <p class="feedback__data">(11) 98756-0055</p>
+                        <!--Telefone 2-->
+                        <label class="feedback__label">Telefone 2:</label>
+                        <p class="feedback__data feedback__data_none">Não informado</p>
+                    </div>
+                    <!--Bloco PROJECTS-->
+                    <div class="projects">
+                        <h3 class="projects__title">Seus projetos:</h3>
+                        <div class="projects__carousel">
+                            <div class="projects__arrow"></div>
+                            <div class="projects__window">
+                                <ul class="projects__list">
+                                    <!--Populada por JavaScript-->
+                                    <li class="projects__item">
+                                        <img
+                                            class="projects__image"
+                                            src="svg/capa.svg"
+                                            alt="Capa do projeto"
+                                        >
+                                    </li>
+                                    <li class="projects__item">
+                                        <img
+                                            class="projects__image"
+                                            src="svg/capa.svg"
+                                            alt="Capa do projeto"
+                                        >
+                                    </li>
+                                    <li class="projects__item">
+                                        <img
+                                            class="projects__image"
+                                            src="svg/capa.svg"
+                                            alt="Capa do projeto"
+                                        >
+                                    </li>
+                                    <li class="projects__item">
+                                        <img
+                                            class="projects__image"
+                                            src="svg/capa.svg"
+                                            alt="Capa do projeto"
+                                        >
+                                    </li>
+                                    <li class="projects__item">
+                                        <img
+                                            class="projects__image"
+                                            src="svg/capa.svg"
+                                            alt="Capa do projeto"
+                                        >
+                                    </li>
+                                    <li class="projects__item">
+                                        <img
+                                            class="projects__image"
+                                            src="svg/capa.svg"
+                                            alt="Capa do projeto"
+                                        >
+                                    </li>
+                                    <li class="projects__item">
+                                        <img
+                                            class="projects__image"
+                                            src="svg/capa.svg"
+                                            alt="Capa do projeto"
+                                        >
+                                    </li>
+                                    <li class="projects__item">
+                                        <img
+                                            class="projects__image"
+                                            src="svg/capa.svg"
+                                            alt="Capa do projeto"
+                                        >
+                                    </li>
+                                    <li class="projects__item">
+                                        <img
+                                            class="projects__image"
+                                            src="svg/capa.svg"
+                                            alt="Capa do projeto"
+                                        >
+                                    </li>
+                                    <li class="projects__item">
+                                        <img
+                                            class="projects__image"
+                                            src="svg/capa.svg"
+                                            alt="Capa do projeto"
+                                        >
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="projects__arrow"></div>
+                        </div>
+                    </div>
                 </div>
             </main>
         </div>
