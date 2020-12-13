@@ -63,6 +63,7 @@ body {
     .main {
         align-items: stretch;
         margin-bottom: 2.3vw;
+        justify-content: space-between;
     }
 }
 
@@ -78,9 +79,9 @@ body {
 }
 @media only screen and (min-width: 1000px) {
     .signup {
-        flex: 1;
-        width: auto;
-        margin: 0 1.2vw 0 0;
+        flex-grow: 0;
+        width: 37.5vw;
+        margin: 0;
         padding: 2.3vw;
     }
 }
@@ -121,6 +122,9 @@ body {
 .signup__input::placeholder {
     color: #D5D5D5;
 }
+.signup__input_error {
+    border: 1px solid red;
+}
 .signup__input:focus {
     border: 1px solid black;
     background-color:  #EBF0F5;
@@ -129,6 +133,31 @@ body {
 .signup__message {
     font: 400 10px/14px 'Open Sans';
     margin-bottom: 20px;
+    opacity: 0;
+}
+.signup__message_error {
+    opacity: 1;
+}
+
+.signup__flex {
+    display: block;
+}
+@media only screen and (min-width: 1000px) {
+    .signup__flex {
+        display: flex;
+    }
+}
+
+.signup__wrapper {
+    margin: 0;
+}
+@media only screen and (min-width: 1000px) {
+    .signup__wrapper:first-child {
+        margin-right: 1.2vw;
+    }
+    .signup__wrapper:last-child {
+        margin-left: 1.2vw;
+    }
 }
 
 .signup__button {
@@ -151,6 +180,9 @@ body {
     border: 2px solid white;
     padding: 7px 18px;
 }
+.signup__button:disabled {
+    background-color: #2E2D2C66;
+}
 
 
 /* ----------------------- Bloco FEEDBACK ----------------------- */
@@ -168,9 +200,8 @@ body {
 }
 @media only screen and (min-width: 1000px) {
     .feedback {
-        flex: 1;
-        width: auto;
-        margin: 0 0 0 1.2vw;
+        flex-grow: 0;
+        width: 37.5vw;
         padding: 2.3vw;
     }
 }
@@ -199,16 +230,22 @@ body {
 }
 
 .feedback__blank {
-    display: block;
+    display: none;
     color: #ABABAB;
     font: italic 400 14px/20px 'Open Sans';
     margin-bottom: 20px;
     flex-grow: 1;
 }
+.feedback__blank_visible {
+    display: block;
+}
 
 .feedback__info {
     display: none;
     flex-grow: 1;
+}
+.feedback__info_visible {
+    display: block;
 }
 
 .feedback__label {
@@ -229,6 +266,7 @@ body {
 .projects {
     justify-self: flex-end;
     margin-top: 10px;
+    width: 100%;
 }
 
 .projects__title {
@@ -252,6 +290,7 @@ body {
     margin: 0 10px 0 0;
     cursor: pointer;
     transition: background-color .25s ease;
+    border: none;
 }
 .projects__arrow:last-child {
     transform: rotate(180deg);
@@ -269,11 +308,26 @@ body {
     overflow: hidden;
     max-width: 500px;
 }
+@media only screen and (min-width: 1000px) {
+    .projects__window {
+        max-width: none;
+        min-width: 0;
+    }
+}
 
 .projects__list {
     display: flex;
     position: relative;
     left: 0;
+    --item-scroll: 100%;
+    --item-view: 1;
+    transition: left .25s ease;
+}
+@media only screen and (min-width: 1000px) {
+    .projects__list {
+        --item-scroll: 50%;
+        --item-view: 2;
+    }
 }
 
 .projects__item {
