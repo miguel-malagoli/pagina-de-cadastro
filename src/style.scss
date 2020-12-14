@@ -1,0 +1,409 @@
+// Padronizações iniciais
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+*:focus {
+    outline: none;
+}
+:root {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    color: #2E2D2C;
+    background-color: white;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+// ----------------------- Bloco SUCCESS ----------------------- //
+
+.success {
+    position: fixed;
+    z-index: 1;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #73E6CB;
+    border: 2px solid #00B98E;
+    border-radius: 9999px;
+    display: flex;
+    padding: 10px 30px;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    max-width: 400px;
+    opacity: 0;
+    pointer-events: none;
+    animation: success 5s ease 0s 1;
+    @media only screen and (min-width: 1000px) {
+        top: 3vw;
+    }
+
+    .success__check {
+        width: 24px;
+        height: 24px;
+    }
+    
+    .success__line {
+        width: 1px;
+        height: 40px;
+        background-color: #008768;
+        margin: 0 16px 0;
+    }
+    
+    .success__text {
+        font: 600 16px/22px 'Open Sans';
+        color: #008768;
+    }
+}
+@keyframes success {
+    0% {
+        top: -30px;
+        opacity: 0;
+    }
+    10% {
+        top: 30px;
+        opacity: 1;
+    }
+    60% {
+        top: 30px;
+        opacity: 1;
+    }
+    100% {
+        top: 30px;
+        opacity: 0;
+    }
+}
+
+// ----------------------- Bloco BACKGROUND ----------------------- //
+.background {
+    background-image: linear-gradient(#F3F3F3, #F3F3F3), url(svg/capa.svg);
+    background-size: 100% 100%, 1080px auto;
+    background-position: 0 130px, -4px -32px;
+    background-repeat: no-repeat, no-repeat;
+    width: 100%;
+    flex-grow: 1;
+    position: relative;
+    padding: 0 20px;
+    @media only screen and (min-width: 1000px) {
+        background-size: 100% 100%, 108vw auto;
+        background-position: 0 15.6vw, 0 -1vw;
+        padding: 0 10.8vw;
+    }
+
+    .background__logo {
+        height: 40px;
+        margin: 30px 0;
+        @media only screen and (min-width: 1000px) {
+            height: 4.6vw;
+            margin: 3.1vw 0 2.3vw;
+        }
+    }
+}
+
+/* ----------------------- Bloco MAIN ----------------------- */
+.main {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    @media only screen and (min-width: 1000px) {
+        align-items: stretch;
+        margin-bottom: 2.3vw;
+        justify-content: space-between;
+    }
+}
+
+/* ----------------------- Bloco SIGNUP ----------------------- */
+.signup {
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0px 1px 2px #2E2D2C66;
+    padding: 20px;
+    width: 100%;
+    margin: 0 0 20px;
+    @media only screen and (min-width: 1000px) {
+        flex-grow: 0;
+        width: 37.5vw;
+        margin: 0;
+        padding: 2.3vw;
+    }
+
+    .signup__title {
+        font: 700 24px/36px 'Open Sans';
+        margin-bottom: 20px;
+    }
+    
+    .signup__text {
+        font: 400 14px/20px 'Open Sans';
+        margin-bottom: 20px;
+    }
+    
+    .signup__subtitle {
+        font: 600 16px/24px 'Open Sans';
+        margin-bottom: 20px;
+    }
+    
+    .signup__label {
+        font: 400 14px/20px 'Open Sans';
+
+        &.signup__label_required::before {
+            content: '*';
+            color: #E65562;
+            margin-right: 4px;
+        }
+    }
+    
+    .signup__input {
+        width: 100%;
+        border: 1px solid #ABABAB;
+        background-color:  transparent;
+        font: 400 14px/18px 'Open Sans';
+        padding: 10px;
+        margin: 6px 0 2px;
+        transition: border .25s ease, background-color .25s ease;
+
+        &::placeholder {
+            color: #D5D5D5;
+        }
+        &.signup__input_error {
+            border: 1px solid red;
+        }
+        &:focus {
+            border: 1px solid black;
+            background-color:  #EBF0F5;
+        }
+    }
+    
+    .signup__message {
+        font: 400 10px/14px 'Open Sans';
+        margin-bottom: 20px;
+        opacity: 0;
+    }
+    
+    .signup__flex {
+        display: block;
+        @media only screen and (min-width: 1000px) {
+            display: flex;
+        }
+    }
+    
+    .signup__wrapper {
+        margin: 0;
+        @media only screen and (min-width: 1000px) {
+            &:first-child {
+                margin-right: 1.2vw;
+            }
+            &:last-child {
+                margin-left: 1.2vw;
+            }
+        }
+    }
+    
+    .signup__button {
+        background-color: #3570B2;
+        border: none;
+        border-radius: 9999px;
+        color: white;
+        font: 600 16px/24px 'Open Sans';
+        padding: 9px 20px;
+        margin-top: 10px;
+        box-shadow: 0px 3px 6px #2E2D2C66;
+        transition: background-color .25s ease;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #5A5789;
+        }
+        &:focus {
+            background-color: #403D70;
+            border: 2px solid white;
+            padding: 7px 18px;
+        }
+        &:disabled {
+            background-color: #2E2D2C66;
+        }
+    }
+}
+
+// ----------------------- Bloco FEEDBACK ----------------------- //
+.feedback {
+    position: relative;
+    background-color: #EBF0F5;
+    border: 1px solid #C4C8CC;
+    border-radius: 4px;
+    box-shadow: 0px 1px 2px #2E2D2C66;
+    padding: 35px 20px 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    @media only screen and (min-width: 1000px) {
+        flex-grow: 0;
+        width: 37.5vw;
+        padding: 2.3vw;
+    }
+
+    .feedback__top {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 10px;
+        width: 100%;
+        background-color: #C4C8CC;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+    }
+    
+    .feedback__title {
+        color: #403D70;
+        text-transform: uppercase;
+        font: 700 20px/30px 'Open Sans';
+        margin-bottom: 0;
+        @media only screen and (min-width: 1000px) {
+            margin-bottom: 20px;
+        }
+    }
+    
+    .feedback__blank {
+        color: #ABABAB;
+        font: italic 400 14px/20px 'Open Sans';
+        margin-bottom: 20px;
+        flex-grow: 1;
+    }
+    
+    .feedback__info {
+        flex-grow: 1;
+    }
+    
+    .feedback__label {
+        font: 400 14px/20px 'Open Sans';
+    }
+    
+    .feedback__data {
+        font: 600 14px/20px 'Open Sans';
+        margin-bottom: 20px;
+        word-break: break-all;
+    }
+    .feedback__data_none {
+        color: #ABABAB;
+    }
+}
+
+// ----------------------- Bloco PROJECTS ----------------------- //
+.projects {
+    justify-self: flex-end;
+    margin-top: 10px;
+    width: 100%;
+
+    .projects__title {
+        font: 600 16px/24px 'Open Sans';
+        margin-bottom: 20px;
+    }
+    
+    .projects__carousel {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .projects__arrow {
+        width: 10px;
+        height: 40px;
+        clip-path: polygon(0 50%, 100% 0, 100% 100%);
+        background-color: #C4C8CC;
+        flex-grow: 0;
+        flex-shrink: 0;
+        margin: 0 10px 0 0;
+        cursor: pointer;
+        transition: background-color .25s ease;
+        border: none;
+
+        &:last-child {
+            transform: rotate(180deg);
+            margin: 0 0 0 10px;
+        }
+        &:hover {
+            background-color: #5A5789;
+        }
+        &:focus {
+            background-color: #403D70;
+        }
+    }
+    
+    .projects__window {
+        flex-grow: 1;
+        overflow: hidden;
+        max-width: 500px;
+        @media only screen and (min-width: 1000px) {
+            max-width: none;
+            min-width: 0;
+        }
+    }
+    
+    .projects__list {
+        display: flex;
+        position: relative;
+        left: 0;
+        --item-scroll: 100%;
+        --item-view: 1;
+        transition: left .25s ease;
+        @media only screen and (min-width: 1000px) {
+            --item-scroll: 50%;
+            --item-view: 2;
+        }
+    }
+    
+    .projects__item {
+        position: relative;
+        flex-shrink: 0;
+        display: block;
+        height: 0;
+        padding-bottom: 56.25%;
+        width: calc(100% - 20px);
+        margin: 0 10px 9px;
+        background-color: white;
+        box-shadow: 0px 3px 6px #2E2D2C66;
+        cursor: pointer;
+        @media only screen and (min-width: 1000px) {
+            width: calc(50% - 20px);
+            padding-bottom: 30%;
+        }
+    }
+    
+    .projects__image {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border: 2px solid white;
+        opacity: 1;
+        transition: opacity .25s ease, border .25s ease;
+    }
+    .projects__item:hover .projects__image {
+        opacity: .5;
+    }
+}
+
+// ----------------------- Bloco FOOTER ----------------------- //
+.footer {
+    height: 64px;
+    flex-grow: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(153deg, #5A5789 0%, #2D2C45 100%);
+
+    .footer__text {
+        text-transform: uppercase;
+        color: white;
+        font-weight: 700;
+    }
+}

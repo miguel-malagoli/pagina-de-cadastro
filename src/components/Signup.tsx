@@ -50,7 +50,7 @@ const Signup = (props: {handleData: (data: Data) => void}) => {
         return valid;
     }
     function validatePhone2() {
-        const valid = (phone2.length <= 15 && RGX.PHONE_CHAR.test(phone2));
+        const valid = (phone2.length === 0 || (phone2.length <= 15 && RGX.PHONE_CHAR.test(phone2)));
         setValidPhone2(valid);
         return valid;
     }
@@ -79,7 +79,7 @@ const Signup = (props: {handleData: (data: Data) => void}) => {
                 <h2 className="signup__subtitle">Dados pessoais</h2>
                 <label className="signup__label signup__label_required" htmlFor="form-name">Nome completo:</label>
                 <input
-                    className={'signup__input' + validName ? '' : ' signup__input_error'}
+                    className={'signup__input' + (validName ? '' : ' signup__input_error')}
                     type="text"
                     placeholder="Seu nome"
                     id="form-name"
@@ -88,12 +88,12 @@ const Signup = (props: {handleData: (data: Data) => void}) => {
                     onBlur={validateName}
                     required
                 />
-                <p className={'signup__message' + validName ? '' : ' signup__message_error'}>
+                <p className="signup__message" style={{opacity: (validName ? 0 : 1)}}>
                     Preencha esse campo com apenas letras e espaços
                 </p>
                 <label className="signup__label signup__label_required" htmlFor="form-email">E-mail:</label>
                 <input
-                    className="signup__input"
+                    className={'signup__input' + (validEmail ? '' : ' signup__input_error')}
                     type="email"
                     placeholder="seunome@sobrenome.com.br"
                     id="form-email"
@@ -102,14 +102,14 @@ const Signup = (props: {handleData: (data: Data) => void}) => {
                     onBlur={validateEmail}
                     required
                 />
-                <p className="signup__message">
+                <p className="signup__message" style={{opacity: (validEmail ? 0 : 1)}}>
                     Preencha esse campo com um email válido
                 </p>
                 <div className="signup__flex">
                     <div className="signup__wrapper">
                         <label className="signup__label signup__label_required" htmlFor="form-phone1">Telefone 1:</label>
                         <input
-                            className="signup__input"
+                            className={'signup__input' + (validPhone1 ? '' : ' signup__input_error')}
                             type="text"
                             placeholder="(88) 8888-8888"
                             id="form-phone1"
@@ -119,14 +119,14 @@ const Signup = (props: {handleData: (data: Data) => void}) => {
                             maxLength={15}
                             required
                         />
-                        <p className="signup__message">
+                        <p className="signup__message" style={{opacity: (validPhone1 ? 0 : 1)}}>
                             Preencha esse campo com um número de telefone válido
                         </p>
                     </div>
                     <div className="signup__wrapper">
                         <label className="signup__label" htmlFor="form-phone2">Telefone 2:</label>
                         <input
-                            className="signup__input"
+                            className={'signup__input' + (validPhone2 ? '' : ' signup__input_error')}
                             type="text"
                             placeholder="(88) 8888-8888"
                             id="form-phone2"
@@ -135,7 +135,7 @@ const Signup = (props: {handleData: (data: Data) => void}) => {
                             onBlur={validatePhone2}
                             maxLength={15}
                         />
-                        <p className="signup__message">
+                        <p className="signup__message" style={{opacity: (validPhone2 ? 0 : 1)}}>
                             O número informado não é válido
                         </p>
                     </div>
