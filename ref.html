@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="index.css" />
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+        <script src="index.js" defer></script>
+        <title>Cadastro | Docket</title>
+    </head>
+    <body onresize="scrollList(0)">
+        <!--Bloco SUCCESS-->
+        <div class="success" id="success">
+            <img
+                class="success__check"
+                src="svg/check.svg"
+                alt="Sucesso!"
+            >
+            <div class="success__line"></div>
+            <p class="success__text">
+                Candidatura enviada com sucesso!
+            </p>
+        </div>
+        <!--Bloco BACKGROUND-->
+        <div class="background">
+            <img
+                class="background__logo"
+                src="svg/logo.svg"
+                alt="Logo Docket"
+            >
+            <!--Bloco MAIN-->
+            <main class="main">
+                <!--Bloco SIGNUP-->
+                <div class="signup">
+                    <h1 class="signup__title">Venha trablhar na Docket</h1>
+                    <p class="signup__text">
+                        Preencha o formulário abaixo e venha trabalhar em uma das startups mais desejadas do Brasil!
+                    </p>
+                    <form class="signup__form" onsubmit="handleSubmit(event)">
+                        <h2 class="signup__subtitle">Dados pessoais</h2>
+                        <!--Nome-->
+                        <label class="signup__label signup__label_required" for="form-name">Nome completo:</label>
+                        <input
+                            class="signup__input"
+                            type="text"
+                            placeholder="Seu nome"
+                            name="name"
+                            id="form-name"
+                            onblur="validateName()"
+                            required
+                        >
+                        <p class="signup__message" id="message-name">
+                            Preencha esse campo com apenas letras e espaços
+                        </p>
+                        <!--Email-->
+                        <label class="signup__label signup__label_required" for="form-email">E-mail:</label>
+                        <input
+                            class="signup__input"
+                            type="email"
+                            placeholder="seunome@sobrenome.com.br"
+                            name="email"
+                            id="form-email"
+                            onblur="validateEmail()"
+                            required
+                        >
+                        <p class="signup__message" id="message-email">
+                            Preencha esse campo com um email válido
+                        </p>
+                        <div class="signup__flex">
+                            <div class="signup__wrapper">
+                                <!--Telefone 1-->
+                                <label class="signup__label signup__label_required" for="form-phone1">Telefone 1:</label>
+                                <input
+                                    class="signup__input"
+                                    type="text"
+                                    placeholder="(88) 8888-8888"
+                                    name="phone1"
+                                    id="form-phone1"
+                                    oninput="formatPhone(event)"
+                                    onblur="validatePhone1()"
+                                    maxlength="15"
+                                    required
+                                >
+                                <p class="signup__message" id="message-phone1">
+                                    Preencha esse campo com um número de telefone válido
+                                </p>
+                            </div>
+                            <div class="signup__wrapper">
+                                <!--Telefone 2-->
+                                <label class="signup__label" for="form-phone2">Telefone 2:</label>
+                                <input
+                                    class="signup__input"
+                                    type="text"
+                                    placeholder="(88) 8888-8888"
+                                    name="phone2"
+                                    id="form-phone2"
+                                    oninput="formatPhone(event)"
+                                    onblur="validatePhone2()"
+                                    maxlength="15"
+                                >
+                                <p class="signup__message" id="message-phone2">
+                                    O número informado não é válido
+                                </p>
+                            </div>
+                        </div>
+                        <button class="signup__button" type="submit" id="signup-button">Enviar</button>
+                    </form>
+                </div>
+                <!--Bloco FEEDBACK-->
+                <div class="feedback">
+                    <div class="feedback__top"></div>
+                    <h3 class="feedback__title">Ficha do candidato</h3>
+                    <p class="feedback__blank feedback__blank_visible" id="feedback-blank">
+                        Preencha o formulário e clique em "Enviar" após conferir atentamente.
+                    </p>
+                    <div class="feedback__info" id="feedback-info">
+                        <!--Nome-->
+                        <label class="feedback__label">Nome completo:</label>
+                        <p class="feedback__data" id="feedback-name">Não informado</p>
+                        <!--E-mail-->
+                        <label class="feedback__label">E-mail:</label>
+                        <p class="feedback__data" id="feedback-email">Não informado</p>
+                        <!--Telefone 1-->
+                        <label class="feedback__label">Telefone 1:</label>
+                        <p class="feedback__data" id="feedback-phone1">Não informado</p>
+                        <!--Telefone 2-->
+                        <label class="feedback__label">Telefone 2:</label>
+                        <p class="feedback__data feedback__data_none" id="feedback-phone2">Não informado</p>
+                    </div>
+                    <!--Bloco PROJECTS-->
+                    <div class="projects">
+                        <h3 class="projects__title">Seus projetos:</h3>
+                        <div class="projects__carousel">
+                            <button
+                                class="projects__arrow"
+                                onclick="scrollList(-1)">
+                            </button>
+                            <div class="projects__window">
+                                <ul class="projects__list" id="projects-list">
+                                    <!--Populada por JavaScript-->
+                                </ul>
+                            </div>
+                            <button
+                                class="projects__arrow"
+                                onclick="scrollList(1)">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+        <!--Bloco FOOTER-->
+        <footer class="footer">
+            <p class="footer__text">Docket © 2019</p>
+        </footer>
+    </body>
+</html>
